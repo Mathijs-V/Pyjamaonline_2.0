@@ -1,4 +1,8 @@
 :root {
+  /* Sofia Pro Font Override */
+  --font-body-family: "sofia-pro", sans-serif;
+  --font-heading-family: "sofia-pro", sans-serif;
+  
   --alpha-button-background: 1;
   --alpha-button-border: 1;
   --alpha-link: 0.85;
