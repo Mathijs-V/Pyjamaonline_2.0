@@ -70,9 +70,184 @@
       padding-top: 0.5rem;
     }
   }
+
+  /* Search bar styles for tablet/desktop */
+  .header__search-bar {
+    flex: 0 1 400px;
+    max-width: 400px;
+    margin: 0 2rem;
+  }
+
+  .search-bar__form {
+    position: relative;
+    width: 100%;
+  }
+
+  .header__search-bar .field {
+    margin: 0;
+    border: none;
+    box-shadow: none;
+  }
+  
+  .header__search-bar .field:after {
+    display: none;
+  }
+
+  .header__search-bar .search__input {
+    background-color: #f3f3f3;
+    border: none;
+    border-radius: 25px;
+    padding: 0.8rem 3rem 0.8rem 4rem;
+    width: 100%;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    box-shadow: none;
+  }
+
+  .header__search-bar .search__input::placeholder {
+    color: #666;
+    opacity: 1;
+  }
+
+  .header__search-bar .search__input:focus {
+    background-color: #ffffff;
+    border: 1px solid #C75248;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .header__search-bar .search__button {
+    position: absolute;
+    left: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: #666;
+    pointer-events: none;
+  }
+
+  .header__search-bar .reset__button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    color: #666;
+  }
+
+  /* Mobile/tablet/desktop responsive classes */
+  .large-up-hide {
+    display: block;
+  }
+
+  .medium-up-show {
+    display: none;
+  }
+
+  @media screen and (min-width: 750px) {
+    .large-up-hide {
+      display: none;
+    }
+    
+    .medium-up-show {
+      display: block;
+    }
+
+    .header__search-bar {
+      flex: 0 1 300px;
+      max-width: 300px;
+      margin: 0 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .header__search-bar {
+      flex: 0 1 400px;
+      max-width: 400px;
+      margin: 0 2rem;
+    }
+  }
 </style>
 
 {%- style -%}
+  .header__shop-name {
+    font-family: 'Sofia Pro', sans-serif;
+    font-weight: 900;
+    font-size: 18px;
+    color: #C75248;
+    margin-right: 12px;
+    display: inline-flex;
+    line-height: 1;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .header__heading {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__heading-link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .header__heading-logo-wrapper {
+    display: inline-flex;
+  }
+
+  @media screen and (min-width: 750px) {
+    .header__shop-name {
+      font-size: 24px;
+      margin-right: 16px;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .header__shop-name {
+      font-size: 32px;
+      margin-right: 20px;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .header__shop-name {
+      font-size: 16px;
+      margin-right: 8px;
+    }
+    
+    .header__heading-logo-wrapper {
+      max-width: 120px;
+      flex-shrink: 1;
+    }
+    
+    .header__heading {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+    
+    .header__heading-link {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 389px) {
+    .header__shop-name {
+      font-size: 14px;
+      margin-right: 6px;
+    }
+    
+    .header__heading-logo-wrapper {
+      max-width: 100px;
+    }
+  }
+
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
@@ -143,6 +318,7 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            <span class="header__shop-name">{{ shop.name }}</span>
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}
@@ -183,6 +359,7 @@
         <h1 class="header__heading">
       {%- endif -%}
           <a href="{{ routes.root_url }}" class="header__heading-link link link--text focus-inset">
+            <span class="header__shop-name">{{ shop.name }}</span>
             {%- if settings.logo != blank -%}
               <div class="header__heading-logo-wrapper">
                 {%- assign logo_alt = settings.logo.alt | default: shop.name | escape -%}

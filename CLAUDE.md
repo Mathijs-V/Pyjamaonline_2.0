@@ -22,6 +22,8 @@ When developing for this theme, adhere to the following principles to maintain t
 
 * **Language: Default is Dutch.** The primary audience is Dutch-speaking.
 
+* **Shopify Admin first approach** If at any point during the development, it's better to change something in the shopify admin instead of in the code, tell me.  
+
 ## Key Commands
 
 ### Development
