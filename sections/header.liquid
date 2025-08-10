@@ -64,6 +64,15 @@
     line-height: calc(1 + 0.8 / var(--font-body-scale));
   }
 
+  /* Make navigation menu text bold */
+  .header__menu-item {
+    font-weight: bold;
+  }
+
+  .header__menu-item span {
+    font-weight: bold;
+  }
+
   @media screen and (min-width: 750px) {
     .list-menu__item--link {
       padding-bottom: 0.5rem;
@@ -212,9 +221,9 @@
 
 {%- style -%}
   .header__shop-name {
-    font-family: 'Sofia Pro', sans-serif;
-    font-weight: 900;
-    font-size: 18px;
+    font-family: "sofia-pro", sans-serif;
+    font-weight: bold;
+    font-size: 16px;
     color: #C75248;
     margin-right: 12px;
     display: inline-flex;
@@ -241,26 +250,26 @@
 
   @media screen and (min-width: 750px) {
     .header__shop-name {
-      font-size: 24px;
+      font-size: 20px;
       margin-right: 16px;
     }
   }
 
   @media screen and (min-width: 990px) {
     .header__shop-name {
-      font-size: 32px;
+      font-size: 26px;
       margin-right: 20px;
     }
   }
 
   @media screen and (max-width: 749px) {
     .header__shop-name {
-      font-size: 16px;
+      font-size: 14px;
       margin-right: 8px;
     }
     
     .header__heading-logo-wrapper {
-      max-width: 120px;
+      max-width: 80px;
       flex-shrink: 1;
     }
     
@@ -276,12 +285,12 @@
   
   @media screen and (max-width: 389px) {
     .header__shop-name {
-      font-size: 14px;
+      font-size: 12px;
       margin-right: 6px;
     }
     
     .header__heading-logo-wrapper {
-      max-width: 100px;
+      max-width: 70px;
     }
   }
 
