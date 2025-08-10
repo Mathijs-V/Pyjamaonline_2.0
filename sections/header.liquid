@@ -171,6 +171,43 @@
       margin: 0 2rem;
     }
   }
+
+  /* Wider predictive search results on tablet/desktop */
+  @media screen and (min-width: 750px) {
+    .header__search-bar .predictive-search {
+      width: 500px;
+      max-width: 500px;
+    }
+    
+    .header__search-bar .predictive-search__results-groups-wrapper {
+      min-width: 500px;
+    }
+    
+    .header__search-bar .predictive-search__result-group {
+      width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 990px) {
+    .header__search-bar .predictive-search {
+      width: 600px;
+      max-width: 600px;
+    }
+    
+    .header__search-bar .predictive-search__results-groups-wrapper {
+      min-width: 600px;
+    }
+  }
+
+  /* Ensure search dropdown doesn't get cut off */
+  .header__search-bar {
+    position: relative;
+  }
+  
+  .header__search-bar .predictive-search {
+    right: auto;
+    left: 0;
+  }
 </style>
 
 {%- style -%}
