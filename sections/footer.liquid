@@ -15,6 +15,45 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  /* Mobile 2x2 grid layout for footer menus */
+  @media screen and (max-width: 749px) {
+    .footer__content-top .grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      padding: 0 1.5rem;
+    }
+
+    .footer-block.grid__item {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .footer-block.grid__item:first-child {
+      margin-top: 0;
+    }
+
+    /* Ensure proper spacing for footer blocks */
+    .footer-block__heading {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-block__details-content {
+      margin-bottom: 2rem;
+    }
+
+    /* Keep newsletter full width if present */
+    .footer-block.newsletter {
+      grid-column: 1 / -1;
+    }
+
+    /* Keep brand info full width if present */
+    .footer-block--brand {
+      grid-column: 1 / -1;
+    }
+  }
+
   @media screen and (min-width: 750px) {
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
